@@ -22,7 +22,7 @@
         <header class="header">
             <div class="logo">
                 <img src="FOTO/logo2.png" alt="logo_fuyuko" width="77px" height="77px">
-                <h1>FUYUKO.ID.</h1>
+                <h1>FUYUKO.ID</h1>
             </div>
             <div class="bagian">
                 <a href="index.php" class="tidak">Tentang Kami</a>
