@@ -1,0 +1,515 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF3E0;
+    margin: 0;
+}
+
+/* =========================
+   FONT
+========================= */
+
+/* Pacifico */
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Nunito */
+.nunito,
+.nunito-bold {
+    font-family: "Nunito", sans-serif;
+}
+
+.nunito-bold {
+    font-weight: 700;
+}
+
+/* Quicksand */
+.quicksand,
+.quicksand-regular,
+.quicksand-bold {
+    font-family: "Quicksand", sans-serif;
+}
+
+.quicksand-regular {
+    font-weight: 400;
+}
+
+.quicksand-bold {
+    font-weight: 700;
+}
+
+/* Old Standard TT */
+.old-regular,
+.old-bold,
+.old-italic {
+    font-family: "Old Standard TT", serif;
+}
+
+.old-regular {
+    font-weight: 400;
+}
+
+.old-bold {
+    font-weight: 700;
+}
+
+.old-italic {
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    background-color: #FADADD;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    position: relative;
+    filter: drop-shadow(0px 6px 4px gray);
+}
+
+.logo img {
+    width: 150px;
+    height: 150px;
+}
+
+.logo h1 {
+    font-family: "Quicksand", sans-serif;
+    color: #4E342E;
+    margin: 10px;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.bagian {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.bagian a {
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    margin: 30px;
+    color: #8D6E63;
+    text-decoration: none;
+}
+
+.aktif {
+    font-weight: bold;
+}
+
+/* =========================
+   HOME
+========================= */
+.pengenalan {
+    height: 100vh;
+    background-image: url("../FOTO/gambar kue awal.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.kata2 {
+    color: white;
+    margin-right: 50px;
+    font-size: 40px;
+    font-family: "Pacifico", sans-serif;
+}
+
+.ajakan {
+    padding: 100px;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-size: 32px;
+    color: #8D6E63;
+}
+
+.foto2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.tbl {
+    text-align: center;
+    margin: 50px;
+}
+
+.tombol1 {
+    display: inline-block;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #e57373;
+    color: white;
+    padding: 12px 40px;
+    border-radius: 50px;
+    border: 2px solid white;
+}
+
+/* =========================
+   PRODUK / CARD
+========================= */
+.judul {
+    text-align: center;
+    background-color: #FADADD;
+    color: #6D4C41;
+    padding: 50px;
+    font-weight: 400;
+    font-size: 36px;
+    font-family: "Old Standard TT", serif;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.grid {
+    display: flex;
+    gap: 30px;
+    padding: 60px;
+    margin-bottom: 80px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+}
+
+.grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.grid::-webkit-scrollbar-thumb {
+    background: #d8a7a7;
+    border-radius: 10px;
+}
+
+.card {
+    background: #fff;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 10px;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+
+.card span {
+    font-size: 20px;
+    display: block;
+    padding: 0 10px 30px;
+    font-weight: bold;
+}
+
+/* =========================
+   KONTAK
+========================= */
+.kontak {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-left: 80px;
+    font-family: "Nunito", sans-serif;
+}
+
+.kiri {
+    width: 40%;
+}
+
+.kiri h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.deskripsi {
+    font-size: 25px;
+    color: #8D6E63;
+    margin-bottom: 30px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.info i {
+    background-color: #E57373;
+    color: white;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.info h4 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.info p {
+    margin: 2px 0 0;
+    color: #7a6a5f;
+    font-size: 20px;
+}
+
+.kanan {
+    width: 60%;
+    text-align: center;
+}
+
+/* FORM PESAN */
+.form-pesan {
+    background-color: #FADADD;
+    padding: 40px;
+    margin-left: 250px;
+    margin-top: 50px;
+    border-radius: 25px;
+    width: 500px;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-family: "Nunito", sans-serif;
+}
+
+.form-pesan h3 {
+    text-align: center;
+    font-size: 35px;
+    color: #6D4C41;
+}
+
+#error-msg {
+    background-color: #ffe5e5;
+    color: #cc0000;
+
+    padding: 15px;
+    border-radius: 12px;
+
+    font-size: 16px;
+    text-align: left;
+
+    display: none;
+}
+
+.form-pesan input,
+.form-pesan textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+
+    font-size: 18px;
+    font-family: "Nunito", sans-serif;
+}
+
+.form-pesan textarea {
+    resize: none;
+    height: 120px;
+}
+
+#pesanan {
+    height: 180px;
+}
+
+.form-pesan button {
+    background-color: #E57373;
+    color: white;
+
+    border: none;
+    border-radius: 50px;
+
+    padding: 15px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-pesan button:hover {
+    background-color: #d85f5f;
+    transform: scale(1.03);
+}
+
+/* =========================
+   MAP
+========================= */
+.map h2 {
+    text-align: left;
+    font-family: "Nunito", sans-serif;
+    font-size: 40px;
+    margin-top: 100px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.map iframe {
+    text-align: left;
+    margin-left: 80px;
+    width: 1300px;
+    height: 600px;
+    border: 0;
+    margin-bottom: 150px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    display: flex;
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+}
+
+.logo2 {
+    width: 30%;
+    text-align: center;
+    padding: 25px;
+    background-color: #F979E4;
+}
+
+.logo2 img {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+}
+
+.logo2 h2 {
+    margin-top: 5px;
+    font-size: 20px;
+    color: #333;
+}
+
+.isi {
+    font-size: 20px;
+    width: 70%;
+    background-color: #FADADD;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 100px;
+    padding: 40px 250px;
+}
+
+.group {
+    display: flex;
+    gap: 30px;
+}
+
+.col {
+    color: #8d6e63;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.col p {
+    white-space: nowrap;
+    margin: 0;
+}
+
+.col:nth-child(1),
+.col:nth-child(3) {
+    margin-left: 80px;
+    font-weight: bold;
+    width: 140px;
+}
+
+.col a {
+    color: #8d6e63;
+    text-decoration: none;
+}
+
+/* =========================
+   BUTTON TOP
+========================= */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 28px;
+}
+
+#btnTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #e7a8a8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+#btnTop:hover {
+    background-color: #d98c8c;
+    transform: scale(1.1);
+}
+
+/* WHATSAPP FLOAT */
+.wa-float {
+    position: fixed;
+
+    right: 25px;
+    bottom: 95px; /* posisi di atas tombol panah */
+
+    width: 65px;
+    height: 65px;
+
+    background-color: #25D366;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 38px;
+
+    text-decoration: none;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+.wa-float:hover {
+    transform: scale(1.1);
+    background-color: #20ba5a;
+}
