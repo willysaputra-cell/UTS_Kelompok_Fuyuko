@@ -1,7 +1,7 @@
 <?php
 include "security.php";
 
-echo "welcome, " . $username;
+echo "welcome, " .$username;
 ?>
 <br>
 <a href="courses/index.php">Manajemen Kelas</a>

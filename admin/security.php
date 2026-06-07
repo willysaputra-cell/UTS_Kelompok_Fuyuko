@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-$_SESSION = [];
-session_unset();
-session_destroy();
+$username = $_SESSION['username'];
 
-header ("Location: ../login.php");
-exit;
+if($username == ""){
+    header("Location: ../login.php");
+    exit;
+}
+
 ?>
