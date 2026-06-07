@@ -1,3 +1,7 @@
+<?php
+include "koneksi.php";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
     <head>
@@ -34,103 +38,55 @@
             <!-- KUE KERING -->
             <h2 class="judul" id="kuek">KUE KERING</h2>
             <div class="grid">
-                <div class="card">
-                    <img src="FOTO/1.jpg">
-                    <p>Chocochips Cookies Crispy</p>
-                    <span>Rp. 50.000</span>
+                <?php
+                $sql = "select * from kue_kering";
+                $query = mysqli_query($conn, $sql);
+                while($result = mysqli_fetch_array($query)) {
+                ?>
+                <div class = "card">
+                    <img src="FOTO/<?= $result['photo'] ?>">
+                    <p><?= $result['name'] ?></p>
+                    <span><?= number_format($result['price'],0,',','.') ?></span>
                 </div>
-
-                <div class="card">
-                    <img src="FOTO/2.jpg">
-                    <p>Almond Crescent Cookies</p>
-                    <span>Rp. 50.000</span>
-                </div>
-
-                <div class="card">
-                    <img src="FOTO/3.jpg">
-                    <p>Chui Kao So</p>
-                    <span>Rp. 50.000</span>
-                </div>
-
-                <div class="card">
-                    <img src="FOTO/Bola Salju Mede.jpg">
-                    <p>Bola Salju Mede</p>
-                    <span>Rp. 75.000</span>
-                </div>
-
-                <div class="card">
-                    <img src="FOTO/Semprit Dahlia.jpg">
-                    <p>Semprit Dahlia</p>
-                    <span>Rp. 45.000</span>
-                </div>
+                <?php
+                }
+                ?>
             </div>
 
             <!-- SNACK -->
             <h2 class="judul" id="puding">SNACK</h2>
             <div class="grid">
-                <div class="card">
-                    <img src="FOTO/Amplang Khas Ketapang.jpg">
-                    <p>Amplang Khas Ketapang</p>
-                    <span>Rp. 80.000</span>
+                <?php
+                $sql = "select * from snack";
+                $query = mysqli_query($conn, $sql);
+                while($result = mysqli_fetch_array($query)) {
+                ?>
+                <div class = "card">
+                    <img src="FOTO/<?= $result['photo'] ?>">
+                    <p><?= $result['name'] ?></p>
+                    <span><?= number_format($result['price'],0,',','.') ?></span>
                 </div>
-
-                <div class="card">
-                    <img src="FOTO/Stik Bawang.jpg">
-                    <p>Stik Bawang</p>
-                    <span>Rp. 65.000</span>
-                </div>
-
-                <div class="card">
-                    <img src="FOTO/Kembang Goyang.jpg">
-                    <p>Kembang Goyang</p>
-                    <span>Rp. 65.000</span>
-                </div>
-
-                <div class="card">
-                    <img src="FOTO/Kripik Makaroni Spiral.jpg">
-                    <p>Kripik Makaroni Spiral</p>
-                    <span>Rp. 120.000</span>
-                </div>
-
-                <div class="card">
-                    <img src="FOTO/Semprong Lipat.jpg">
-                    <p>Semprong Lipat</p>
-                    <span>Rp. 65.000</span>
-                </div>
+                <?php
+                }
+                ?>
             </div>
 
             <!-- KUE BASAH & PUDING -->
             <h2 class="judul" id="kueb">KUE BASAH & PUDING</h2>
             <div class="grid">
-                <div class="card">
-                    <img src="FOTO/6.jpg">
-                    <p>Brownies Kukus</p>
-                    <span>Rp. 80.000</span>
+                <?php
+                $sql = "select * from kue_basah";
+                $query = mysqli_query($conn, $sql);
+                while($result = mysqli_fetch_array($query)) {
+                ?>
+                <div class = "card">
+                    <img src="FOTO/<?= $result['photo'] ?>">
+                    <p><?= $result['name'] ?></p>
+                    <span><?= number_format($result['price'],0,',','.') ?></span>
                 </div>
-
-                <div class="card">
-                    <img src="FOTO/7.webp">
-                    <p>Lapis Susu Original Singkawang</p>
-                    <span>Rp. 120.000</span>
-                </div>
-
-                <div class="card">
-                    <img src="FOTO/8.jpg">
-                    <p>Spiku Almond</p>
-                    <span>Rp. 50.000</span>
-                </div>
-
-                <div class="card">
-                    <img src="FOTO/4.jpg">
-                    <p>Puding Regal Lumut</p>
-                    <span>Rp. 95.000</span>
-                </div>
-
-                <div class="card">
-                    <img src="FOTO/5.jpg">
-                    <p>Puding Lumut Butter</p>
-                    <span>Rp. 95.000</span>
-                </div>
+                <?php
+                }
+                ?>
             </div>
         </section>
 
