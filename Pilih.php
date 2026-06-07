@@ -33,7 +33,6 @@ include "koneksi.php";
                 <a href="Hubungi.php" class="tidak">Hubungi Kami</a>
             </div>
         </header>
-        <h1>halo semua</h1>
 
         <section class="produk">
             <!-- KUE KERING -->
