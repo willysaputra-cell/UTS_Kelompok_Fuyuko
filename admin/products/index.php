@@ -17,6 +17,7 @@ $query = mysqli_query($conn, $sql);
             <th>Harga</th>
             <th>Foto</th>
             <th>Id_Kategori</th>
+            <th>Waktu</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,7 @@ $query = mysqli_query($conn, $sql);
             $price = $result['price'];
             $image = $result['image'];
             $category_id = $result['category_id'];
+            $date = $result['date'];
             $id = $result['id'];
         ?>
         <tr>
@@ -35,6 +37,7 @@ $query = mysqli_query($conn, $sql);
             <td><?= $price ?></td>
             <td><?= $image ?></td>
             <td><?= $category_id ?></td>
+            <td><?= $date ?></td>
             <td>
                 <a href="edit.php?id=<?= $id; ?>">Edit</a> |
                 <a href="hapus.php?id=<?= $id; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
