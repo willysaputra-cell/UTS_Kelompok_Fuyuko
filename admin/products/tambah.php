@@ -1,33 +1,49 @@
 <?php
 include "../security.php";
 include "../../koneksi.php";
+?>
 
-if (isset($_POST['simpan'] $$ isset($_FILES['image']['name']))) {
-    $name = $_POST['name'];
-    $price = $_POST['price'];
-    $category_id = $_POST['category_id'];
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tambah Produk</title>
+    </head>
+    <body>
+        <h1>Tambah Produk</h1>
+        <a href="index.php">Kembali</a>
+        <br><br>
+        <?php if (isset($error)) : ?>
+            <p style="color:red;"><?= $error; ?></p>
+        <?php endif; ?>
 
-    $file_name = $_FILES['image']['name'];
-    $file_tmp = $_FILES['image']['tmp_name'];
-    $location = "FOTO/";
+        <form method="POST" action="simpan.php" enctype="multipart/form-data">
+            <label>Nama Produk</label><br>
+            <input type="text" name="name">
+            <br><br>
 
-    if ($name == '' || $price <= 0 || $category_id = '') {
-        $error = "Semua data wajib diisi!";
-    } else {
-        if (move_uploaded_file($file_tmp, $location . $file_name)) {
-            $sql = "INSERT INTO products (name, price, category_id, image)
-            VALUES ('$name', '$price', '$category_id', '$file_name')";
-            $query = mysqli_query($conn, $sql);
+            <label>Harga</label><br>
+            <input type="number" name="price">
+            <br><br>
 
-            if ($query) {
-                header ("Location: index.php");
-                exit;
-            } else {
-                echo "Produk gagal ditambahkan.";
-            }
-        } else {
-            header ("Location: index.php");
-            exit;
-        }
-    }
-}
+            <label>FOTO</label><br>
+            <input type="file" name="image" accept="image/*">
+            <br><br>
+
+            <label>Pilih Kategori</label><br>
+            <?php
+            $sql_category = "select * from categories";
+            $query_category = mysqli_query($conn, $sql_category);
+            ?>
+            <select name="category_id">
+                <?php while($category = mysqli_fetch_assoc($query_category)): ?>
+                    <option value="<?= $category['id']; ?>">
+                        <?= htmlspecialchars($category['name']); ?>
+                    </option>
+                <?php endwhile; ?>
+            </select>
+            <br><br>
+
+            <button type="submit" name="simpan">Simpan</button>
+        </form>
+    </body>
+</html>

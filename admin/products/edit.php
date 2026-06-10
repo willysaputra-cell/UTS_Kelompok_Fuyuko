@@ -40,13 +40,29 @@ if (!$data) {
             <br><br>
 
             <label>Foto</label><br>
-            <img src="../../FOTO/<?= $data['image']; ?>">
+            <img src="../../FOTO/<?= htmlspecialchars($data['image']); ?>" width="150">
             <br>
 
             <label>Ganti foto</label><br>
             <input type="file" name="image" accept="image/*">
             <br><br>
-            
+
+            <label>Pilih Kategori</label><br>
+            <?php
+            $sql_category = "select * from categories";
+            $query_category = mysqli_query($conn, $sql_category);
+            ?>
+            <select name="category_id">
+                <?php while($category = mysqli_fetch_assoc($query_category)): ?>
+                    <option value="<?= $category['id']; ?>"
+                        <?= $category['id'] == $data['category_id'] ? 'selected' : ''; ?> >
+                        <?= htmlspecialchars($category['name']); ?>
+                    </option>
+                <?php endwhile; ?>
+            </select>
+            <br><br>
+
+            <button type="submit" name="ubah">Ubah</button>
         </form>
 
     </body>
