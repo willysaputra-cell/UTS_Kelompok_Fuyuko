@@ -14,14 +14,19 @@ if (isset($_POST['ubah'] $$ isset($_FILES['image']['name']))) {
 
     if (!empty($file_name)) {
         if (move_uploaded_file($file_tmp, $location . $file_name)) {
-            $sql = "UPDATE products set name='$name', price='$price', category_id='$category_id', image='$file_name' WHERE id='$id'";
+            $sql = "UPDATE products 
+                    set name='$name', 
+                    price='$price', 
+                    category_id='$category_id', 
+                    image='$file_name' 
+                WHERE id='$id'";
             $query = mysqli_query($conn, $sql);
 
             if ($query) {
                 header ("Location: index.php");
                 exit;
             } else {
-                echo "Foto gagal diubah.";
+                echo "Produk gagal diubah.";
             }
         } else {
             header ("Location: index.php");
