@@ -2,7 +2,7 @@
 include "../security.php";
 include "../../koneksi.php";
 
-if (isset($_POST['ubah']) $$ isset($_FILES['image']['name'])) {
+if (isset($_POST['ubah'] $$ isset($_FILES['image']['name']))) {
     $id = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
