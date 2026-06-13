@@ -12,22 +12,22 @@
         <form class="daftar">
             <h1>Daftar</h1>
             <div>
-                <label>Nama Lengkap     :</label><br>
+                <label>Nama Lengkap :</label><br>
                 <input type="text" name="name" placeholder="Ilham Santoso"><br>
             </div>
 
             <div>
-                <label>Nomor Telepon    :</label><br>
+                <label>Nomor Telepon :</label><br>
                 <input type="text" name="no_hp" placeholder="08**********"><br>
             </div>
 
             <div>
-                <label>Alamat           :</label><br>
+                <label>Alamat :</label><br>
                 <textarea placeholder="Jl. Selat Panjang, Gang Kalilandak, No AH5"></textarea><br>
             </div>
 
             <div>
-                <label>Email            :</label><br>
+                <label>Email :</label><br>
                 <input type="email" name="email" placeholder="Ilhamgod@gmail.com"><br>
             </div>
 
