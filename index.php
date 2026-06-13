@@ -48,7 +48,7 @@
             </div>
 
             <div class="tbl">
-            <a href="Pilih.html" class="tombol1">Yuk, lihat produk kami!</a>
+            <a href="Pilih.php" class="tombol1">Yuk, lihat produk kami!</a>
             </div>
         </section>
 
@@ -63,9 +63,9 @@
                     <div class="col">Kategori</div>
 
                         <div class="col">
-                            <p><a href="Pilih.html #kuek">Kue Kering</a></p>
-                            <p><a href="Pilih.html #puding">Snack</a></p>
-                            <p><a href="Pilih.html #kueb">Kue Basah &<br> Puding</a></p>
+                            <p><a href="Pilih.php #kuek">Kue Kering</a></p>
+                            <p><a href="Pilih.php #puding">Snack</a></p>
+                            <p><a href="Pilih.php #kueb">Kue Basah &<br> Puding</a></p>
                         </div>
                 </div>
 

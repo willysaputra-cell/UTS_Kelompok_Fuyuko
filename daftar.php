@@ -1,3 +1,4 @@
+<?php include "koneksi.php"; ?>
 <!DOCTYPE html>
 <html lang="id">
     <head>
@@ -9,21 +10,22 @@
     </head>
 
     <body>
-        <form class="daftar">
+        <div class = "header_daftar"><h1>Forum Pendaftaran</h1></div>
+        <form method="POST" action="sv_daftar.php" class="daftar">
             <h1>Daftar</h1>
             <div>
                 <label>Nama Lengkap :</label><br>
-                <input type="text" name="name" placeholder="Ilham Santoso"><br>
+                <input type="text" name="full_name" placeholder="Ilham Santoso"><br>
             </div>
 
             <div>
                 <label>Nomor Telepon :</label><br>
-                <input type="text" name="no_hp" placeholder="08**********"><br>
+                <input type="text" name="phone_number" placeholder="08**********"><br>
             </div>
 
             <div>
                 <label>Alamat :</label><br>
-                <textarea placeholder="Jl. Selat Panjang, Gang Kalilandak, No AH5"></textarea><br>
+                <textarea name="address" placeholder="Jl. Selat Panjang, Gang Kalilandak, No AH5"></textarea><br>
             </div>
 
             <div>
@@ -31,7 +33,7 @@
                 <input type="email" name="email" placeholder="Ilhamgod@gmail.com"><br>
             </div>
 
-                <button type="button">Kirimkan sekarang!</button>
+                <button type="submit" name="daftar">Daftar sekarang!</button>
         </form>
     </body>
             

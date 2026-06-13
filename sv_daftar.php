@@ -1,0 +1,7 @@
+<?php
+include "koneksi.php";
+
+$full_name = trim($_POST['full_name'] ?? '') ;
+$phone_number = trim($_POST['phone_number'] ?? '');
+$address = trim($_POST['address'] ?? '');
+$email = trim($_POST['email'] ?? '');

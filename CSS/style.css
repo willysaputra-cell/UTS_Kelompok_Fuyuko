@@ -423,6 +423,17 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+
+.header_daftar {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #FADADD;
+    padding: 50px 0px;
+    font-size: 23px;
+    font-family: "Quicksand", sans-serif;
+    color: #4E342E;
+    filter: drop-shadow(0px 6px 4px gray); 
+}
 /* =========================
    MAP
 ========================= */
