@@ -72,9 +72,10 @@
                     </div>
                     <h3>Form Pemesanan</h3>
 
-                    <input type="text" id="nama" placeholder="Nama Lengkap" required>
-
-                    <input type="text" id="alamat" placeholder="Alamat Lengkap" required>
+                    <p>
+                        Sebelum memesan, harap mendaftar terlebih dahulu  <br>
+                        untuk mengisi informasi anda sehingga memudahkan <br>
+                        kami dalam mengirim pesanan. <a href="daftar.php">Daftar</a></p>
 
                     <textarea
                         id="pesanan"
@@ -115,9 +116,9 @@
                     <div class="col">Kategori</div>
 
                         <div class="col">
-                            <p><a href="Pilih.html #kuek">Kue Kering</a></p>
-                            <p><a href="Pilih.html #puding">Snack</a></p>
-                            <p><a href="Pilih.html #kueb">Kue Basah &<br> Puding</a></p>
+                            <p><a href="Pilih.php #kuek">Kue Kering</a></p>
+                            <p><a href="Pilih.php #puding">Snack</a></p>
+                            <p><a href="Pilih.php #kueb">Kue Basah &<br> Puding</a></p>
                         </div>
                 </div>
 
