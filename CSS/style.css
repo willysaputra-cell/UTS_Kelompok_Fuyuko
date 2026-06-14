@@ -389,7 +389,7 @@ body {
 }
 
 .daftar div {
-    padding : 15px 30px;
+    padding : 15px 20px;
     font-size: 25px;
     color: #ab7a6a;
 }
@@ -422,6 +422,17 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+}
+
+p.kembali {
+    text-align: center;
+}
+
+p.kembali a {
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Quicksand", sans-serif;
+    color: #ab7a6a;
 }
 
 .header_daftar {

@@ -33,7 +33,10 @@
                 <input type="email" name="email" placeholder="Ilhamgod@gmail.com"><br>
             </div>
 
-                <button type="submit" name="daftar">Daftar sekarang!</button>
+            <button type="submit" name="daftar">Daftar sekarang!</button>
+            <p class="kembali">
+                <a href="hubungi.php">Kembali</a>
+            </p>
         </form>
     </body>
             
