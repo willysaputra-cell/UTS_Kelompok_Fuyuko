@@ -28,7 +28,7 @@
         </header>
         <section class="pengenalan">
             <div class="kata2">
-                <p>Selamat datang di surga
+                <p>Selamat datang di surga sdfafasf
                 <br>manis! Temukan kue basah, 
                 <br>snack, puding, dan
                 <br>kue kering lezat untuk
