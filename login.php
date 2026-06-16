@@ -13,8 +13,8 @@
         </header>
         <section class="login">
             <form action="sv_login.php" method="post">
-                <input type="text" placeholder="username" name="username"><br>
-                <input type="password" placeholder="password" name="password"><br>
+                <input type="text" placeholder="username" name="username" required><br>
+                <input type="password" placeholder="password" name="password" required><br>
                 <button type="submit">login</button>
             </form>
         </section>

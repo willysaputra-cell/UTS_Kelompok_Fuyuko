@@ -14,14 +14,14 @@ include "../../koneksi.php";
         <title>Tambah Produk</title>
     </head>
     <body>
-        <header>
+        <header class="reveal">
             <h1>Tambah Produk</h1>
         </header>
-        <div class="arah">
-            <a href="index.php">← Kembali</a>
+        <div class="arah reveal">
+            <a href="index.php">Kembali</a>
         </div>
 
-        <section class="form-card">
+        <section class="form-card reveal">
             <?php if (isset($error)) : ?>
                 <p class="error"><?= $error; ?></p>
             <?php endif; ?>
@@ -56,5 +56,6 @@ include "../../koneksi.php";
 
             </form>
         </section>
+        <script src="../../JS/admin.js"></script>
     </body>
 </html>

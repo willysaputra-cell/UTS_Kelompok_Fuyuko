@@ -36,14 +36,14 @@
             </div>
         </section>
 
-        <section class="pengenalan2">
-            <div class="ajakan">
+        <section class="pengenalan2 reveal">
+            <div class="ajakan hidden">
                 <p>Lagi ngidam yang manis?
                     <br>Langsung pilih dan beli sekarang!
                 </p>
             </div>
 
-            <div class="foto2">
+            <div class="foto2 hidden">
                 <img src="FOTO/foto2.png" alt="foto kue">
             </div>
 
@@ -52,7 +52,7 @@
             </div>
         </section>
 
-        <section class="footer">
+        <section class="footer reveal">
             <div class="logo2">
                 <img src="FOTO/logo2.png" alt="Logo FUYUKO">
                 <h2>FUYUKO.ID</h2>

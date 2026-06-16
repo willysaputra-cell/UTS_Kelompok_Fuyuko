@@ -31,7 +31,7 @@
             </div>
         </header>
 
-        <section class="kontak">
+        <section class="kontak reveal">
             <div class="kiri">
                 <h2>Hubungi Kami</h2>
                 <p class="deskripsi">
@@ -96,7 +96,7 @@
             </div>
         </section>
 
-        <section class="map">
+        <section class="map reveal">
             <h2>Lokasi Kami</h2>
             <iframe
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1994.9083847842685!2d109.30821271567214!3d-0.050516752681791025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMDMnMDEuNSJTIDEwOcKwMTgnMzIuOSJF!5e0!3m2!1sen!2sid!4v1777122803416!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -105,7 +105,7 @@
             </iframe>
         </section>
 
-        <section class="footer">
+        <section class="footer reveal">
             <div class="logo2">
                 <img src="FOTO/logo2.png" alt="Logo FUYUKO">
                 <h2>FUYUKO.ID</h2>

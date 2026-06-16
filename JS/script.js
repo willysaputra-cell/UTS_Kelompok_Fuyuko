@@ -57,3 +57,38 @@ ${catatan}`;
 
     window.open(url, "_blank");
 }
+
+/* =========================
+   ANIMASI SCROLL
+========================= */
+
+const hiddenElements = document.querySelectorAll(".hidden");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+hiddenElements.forEach((el) => observer.observe(el));
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+    reveals.forEach((item) => {
+        const top = item.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (top < windowHeight - 100) {
+            item.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();

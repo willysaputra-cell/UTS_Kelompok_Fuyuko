@@ -34,7 +34,7 @@ include "koneksi.php";
             </div>
         </header>
 
-        <section class="produk">
+        <section class="produk reveal">
             <!-- KUE KERING -->
             <h2 class="judul" id="kuek">KUE KERING</h2>
             <div class="grid">
@@ -43,7 +43,7 @@ include "koneksi.php";
                 $query_product = mysqli_query($conn, $sql_product);
                 while($result = mysqli_fetch_array($query_product)) {
                 ?>
-                <div class = "card">
+                <div class = "card hidden">
                     <img src="FOTO/<?= $result['image'] ?>">
                     <p><?= $result['name'] ?></p>
                     <span><?= number_format($result['price'],0,',','.') ?></span>
@@ -90,7 +90,7 @@ include "koneksi.php";
             </div>
         </section>
 
-        <section class="footer">
+        <section class="footer reveal">
             <div class="logo2">
                 <img src="FOTO/logo2.png" alt="Logo FUYUKO">
                 <h2>FUYUKO.ID</h2>

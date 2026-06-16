@@ -14,6 +14,7 @@ header {
     filter: drop-shadow(0px 6px 4px gray);
 }
 
+/* Dashboard */
 .D {
     margin: 0px 40px;
     font-family: "Nunito", sans-serif;
@@ -33,6 +34,23 @@ header {
     max-width: 600px;
     background-color: #FADADD;
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.dashboard:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.dashboard:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.dashboard:nth-child(4) {
+    transition-delay: 0.3s;
 }
 
 .login {
@@ -190,4 +208,125 @@ table td a:hover {
     color: #b00020;
     font-weight: bold;
     margin-bottom: 15px;
+}
+
+/* Registrations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.status.done {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.btn-follow,
+.btn-cancel {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-follow {
+    background: #E57373;
+    color: white;
+}
+
+.btn-follow:hover {
+    background: #d85f5f;
+}
+
+.btn-cancel {
+    background: #888;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background: #666;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fffafb;
+}
+
+.info-box {
+    max-width: 300px;
+    margin: 20px 40px;
+    padding: 15px 20px;
+    background: #FADADD;
+    border-radius: 15px;
+    font-family: "Nunito", sans-serif;
+    color: #4E342E;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0,0,0,.1);
+}
+
+/* Products */
+/* Index */
+.produk-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.btn-edit {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #0d6efd;
+    color: white !important;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-right: 20px;
+}
+
+.btn-edit:hover {
+    background: #0b5ed7;
+}
+
+.btn-hapus {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #dc3545;
+    color: white !important;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-hapus:hover {
+    background: #bb2d3b;
+}
+
+/* Tambah */
+.preview-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: block;
 }
