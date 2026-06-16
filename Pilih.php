@@ -56,7 +56,7 @@ include "koneksi.php";
             <!-- SNACK -->
             <h2 class="judul" id="puding">SNACK</h2>
             <div class="grid">
-                <<?php
+                <?php
                 $sql_product = "SELECT * FROM products WHERE category_id= 2";
                 $query_product = mysqli_query($conn, $sql_product);
                 while($result = mysqli_fetch_array($query_product)) {
@@ -74,7 +74,7 @@ include "koneksi.php";
             <!-- KUE BASAH & PUDING -->
             <h2 class="judul" id="kueb">KUE BASAH & PUDING</h2>
             <div class="grid">
-                <<?php
+                <?php
                 $sql_product = "SELECT * FROM products WHERE category_id= 3";
                 $query_product = mysqli_query($conn, $sql_product);
                 while($result = mysqli_fetch_array($query_product)) {

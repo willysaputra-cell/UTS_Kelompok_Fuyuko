@@ -177,29 +177,46 @@ body {
 .grid {
     display: flex;
     gap: 30px;
+
     padding: 60px;
     margin-bottom: 80px;
+
     overflow-x: auto;
+    overflow-y: hidden;
+
     flex-wrap: nowrap;
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 .grid::-webkit-scrollbar {
-    height: 8px;
+    display: none;
+}
+
+.grid::-webkit-scrollbar-track {
+    background: #f7e3e3;
+    border-radius: 20px;
 }
 
 .grid::-webkit-scrollbar-thumb {
     background: #d8a7a7;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .card {
+    flex: 0 0 300px;
+
     background: #fff;
-    width: 300px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: hidden;
-    text-align: left;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .card img {

@@ -1,0 +1,193 @@
+body {
+    background-color: #FFF3E0;
+    margin: 0;
+}
+
+header {
+    font-family: "Quicksand", sans-serif;
+    font-size: 25px;
+    color: #4E342E;
+    background-color: #FADADD;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0px;
+    filter: drop-shadow(0px 6px 4px gray);
+}
+
+.D {
+    margin: 0px 40px;
+    font-family: "Nunito", sans-serif;
+    color: #ab7a6a;
+    text-align: center;
+    font-size: 25px;
+}
+.D a {
+    text-decoration: none;
+    color: #ab7a6a;
+}
+
+.dashboard {
+    margin: 20px auto;
+    padding: 25px 0px;
+    border-radius: 20px;
+    max-width: 600px;
+    background-color: #FADADD;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.login {
+    max-width: 900px;
+    margin: 25px auto;
+    background: #FADADD;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.login input,
+.login button {
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    width: 100%;
+    padding: 20px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.login button {
+    background-color: #E57373;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login button:hover {
+    background-color: #d85f5f;
+    transform: scale(1.03);
+}
+
+.arah {
+    text-align: center;
+    margin: 30px 0;
+    font-family: "Nunito", sans-serif;
+    margin-bottom: 0px;
+}
+
+.arah a {
+    text-decoration: none;
+    color: #ab7a6a;
+    font-size: 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.arah a:hover {
+    color: #8d5f4f;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.table-container {
+    padding: 0 40px;
+    margin-bottom: 80px;
+}
+
+table th {
+    background-color: #FADADD;
+    color: #4E342E;
+    text-align: left;
+    padding: 12px;
+}
+
+table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-top: 1px solid #eee;
+}
+
+
+table tbody tr:hover {
+    background-color: #fff7f8;
+}
+
+table td a {
+    text-decoration: none;
+    color: #ab7a6a;
+    font-weight: 600;
+}
+
+table td a:hover {
+    color: #8d5f4f;
+}
+
+.form-card {
+    max-width: 700px;
+    margin: 30px auto 80px;
+    background: #FADADD;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    font-family: "Nunito", sans-serif;
+}
+
+.form-card label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #4E342E;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+    outline: 2px solid #E57373;
+}
+
+.form-card button {
+    width: 100%;
+    margin-top: 15px;
+    background-color: #E57373;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-card button:hover {
+    background-color: #d85f5f;
+    transform: scale(1.02);
+}
+
+.error {
+    color: #b00020;
+    font-weight: bold;
+    margin-bottom: 15px;
+}

@@ -1,3 +1,6 @@
+/* =========================
+   TOMBOL KE ATAS
+========================= */
 const btn = document.getElementById("btnTop");
 
 window.onscroll = function() {
@@ -23,17 +26,13 @@ if (btn) {
 
 function kirimWA() {
 
-    let nama = document.getElementById("nama").value.trim();
-    let alamat = document.getElementById("alamat").value.trim();
     let pesanan = document.getElementById("pesanan").value.trim();
     let catatan = document.getElementById("catatan").value.trim();
 
     let errorMsg = document.getElementById("error-msg");
 
-    if (nama === "" || alamat === "" || pesanan === "") {
-
+    if (pesanan === "") {
         errorMsg.style.display = "block";
-
         return;
     }
 
@@ -41,12 +40,6 @@ function kirimWA() {
 
     let pesan =
 `Halo, saya ingin memesan produk Fuyuko.id
-
-Nama :
-${nama}
-
-Alamat :
-${alamat}
 
 Pesanan :
 ${pesanan}
@@ -57,10 +50,10 @@ ${catatan}`;
     let nomorWA = "6289531726626";
 
     let url =
-"https://api.whatsapp.com/send?phone="
-+ nomorWA
-+ "&text="
-+ encodeURIComponent(pesan);
+        "https://wa.me/" +
+        nomorWA +
+        "?text=" +
+        encodeURIComponent(pesan);
 
     window.open(url, "_blank");
 }

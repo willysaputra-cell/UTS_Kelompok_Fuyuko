@@ -15,22 +15,22 @@
             <h1>Daftar</h1>
             <div>
                 <label>Nama Lengkap :</label><br>
-                <input type="text" name="full_name" placeholder="Ilham Santoso"><br>
+                <input type="text" name="full_name" placeholder="Ilham Santoso" required><br>
             </div>
 
             <div>
                 <label>Nomor Telepon :</label><br>
-                <input type="text" name="phone_number" placeholder="08**********"><br>
+                <input type="text" name="phone_number" placeholder="08**********" required><br>
             </div>
 
             <div>
                 <label>Alamat :</label><br>
-                <textarea name="address" placeholder="Jl. Selat Panjang, Gang Kalilandak, No AH5"></textarea><br>
+                <textarea name="address" placeholder="Jl. Selat Panjang, Gang Kalilandak, No AH5" required></textarea><br>
             </div>
 
             <div>
                 <label>Email :</label><br>
-                <input type="email" name="email" placeholder="Ilhamgod@gmail.com"><br>
+                <input type="email" name="email" placeholder="Ilhamgod@gmail.com" required><br>
             </div>
 
             <button type="submit" name="daftar">Daftar sekarang!</button>
