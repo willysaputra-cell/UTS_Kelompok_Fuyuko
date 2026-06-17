@@ -39,6 +39,8 @@ $total = mysqli_num_rows($query);
                         <th>Foto</th>
                         <th>Id_Kategori</th>
                         <th>Waktu</th>
+                        <th>Ditambahkan Oleh</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,6 +52,7 @@ $total = mysqli_num_rows($query);
                         $image = $result['image'];
                         $category_id = $result['category_id'];
                         $date = $result['date'];
+                        $added_by = $result['added_by'];
                         $id = $result['id'];
                     ?>
                     <tr>
@@ -77,6 +80,7 @@ $total = mysqli_num_rows($query);
                             ?>
                         </td>
                         <td><?= $date ?></td>
+                        <td><?= $added_by ?></td>
                         <td>
                             <a class="btn-edit"
                                 href="edit.php?id=<?= $id; ?>">

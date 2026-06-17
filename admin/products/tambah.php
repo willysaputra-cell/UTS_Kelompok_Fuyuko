@@ -35,7 +35,7 @@ include "../../koneksi.php";
                 <input type="number" name="price" required>
 
                 <label>Foto Produk</label>
-                <input type="file" name="image" accept="image/*" required>
+                <input type="file" name="image" accept="image/*">
 
                 <label>Pilih Kategori</label>
 
