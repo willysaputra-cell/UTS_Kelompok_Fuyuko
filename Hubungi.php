@@ -35,7 +35,7 @@
             <div class="kiri">
                 <h2>Hubungi Kami</h2>
                 <p class="deskripsi">
-                Pesan produk favoritmu dengan mudah melalui chat WhatsApp!
+                Pesan produk favoritmu dengan mudah melalui chat WhatsApp!!
                 Kami menyediakan layanan antar (tidak melayani makan di tempat).
                 </p>
 
@@ -68,7 +68,7 @@
             <div class="kanan">
                 <form class="form-pesan">
                     <div id="error-msg">
-                        Gagal mengirim pesan. Harap isi semua kolom yang wajib diisi.
+                        Gagal mengirim pesan. Harap isi semua kolom yang wajib diisi!
                     </div>
                     <h3>Form Pemesanan</h3>
 
