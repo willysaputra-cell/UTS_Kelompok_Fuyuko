@@ -29,7 +29,7 @@
         <section class="pengenalan">
             <div class="kata2">
                 <p>Selamat datang di surga
-                <br>manis! Temukan kue basah, 
+                <br>manis!! Temukan kue basah, 
                 <br>snack, puding, dan
                 <br>kue kering lezat untuk
                 <br>setiap momen Anda.</p>
@@ -38,8 +38,8 @@
 
         <section class="pengenalan2 reveal">
             <div class="ajakan hidden">
-                <p>Lagi ngidam yang manis?
-                    <br>Langsung pilih dan beli sekarang!
+                <p>Lagi ngidam yang manis??
+                    <br>Langsung pilih dan beli sekarang!!
                 </p>
             </div>
 
