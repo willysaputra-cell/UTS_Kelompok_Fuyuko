@@ -76,7 +76,7 @@ $total = mysqli_num_rows($query);
                                 <a  class="btn-follow"
                                     href="follow_up.php?id=<?= $result['id']; ?>"
                                     onclick = "return confirm('Mark this registration as followed up?')">
-                                    Sudah Follow Up
+                                    Sudah Follow Up!
                                 </a>
                             <?php else : ?>
                                 <a  class="btn-cancel"
