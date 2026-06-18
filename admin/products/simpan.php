@@ -34,7 +34,7 @@ if (isset($_POST['simpan'])) {
             header("Location: index.php");
             exit;
         } else {
-            echo "Produk gagal ditambah";
+            echo "Produk gagal ditambah!";
         }
     }
 }

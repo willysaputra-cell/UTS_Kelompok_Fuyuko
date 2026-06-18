@@ -39,7 +39,7 @@ if (isset($_POST['ubah'])) {
         header ("Location: index.php");
         exit;
     } else {
-        echo "Produk gagal diubah";
+        echo "Produk gagal diubah!";
     }
 }
 ?>
