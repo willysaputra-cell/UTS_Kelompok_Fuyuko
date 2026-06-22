@@ -8,7 +8,7 @@ include "koneksi.php";
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Fuyuko.id</title>
-        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="css/style.css">
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -24,13 +24,13 @@ include "koneksi.php";
     <body>
         <header class="header">
             <div class="logo">
-                <img src="FOTO/logo2.png" alt="logo_fuyuko" width="77px" height="77px">
+                <img src="foto/logo2.png" alt="logo_fuyuko" width="77px" height="77px">
                 <h1>FUYUKO.ID</h1>
             </div>
             <div class="bagian">
                 <a href="index.php" class="tidak">Tentang Kami</a>
-                <a href="Pilih.php" class="aktif">Pilih Favoritmu</a>
-                <a href="Hubungi.php" class="tidak">Hubungi Kami</a>
+                <a href="pilih.php" class="aktif">Pilih Favoritmu</a>
+                <a href="hubungi.php" class="tidak">Hubungi Kami</a>
             </div>
         </header>
 
@@ -44,7 +44,7 @@ include "koneksi.php";
                 while($result = mysqli_fetch_array($query_product)) {
                 ?>
                 <div class = "card hidden">
-                    <img src="FOTO/<?= $result['image'] ?>">
+                    <img src="foto/<?= $result['image'] ?>">
                     <p><?= $result['name'] ?></p>
                     <span><?= number_format($result['price'],0,',','.') ?></span>
                 </div>
@@ -62,7 +62,7 @@ include "koneksi.php";
                 while($result = mysqli_fetch_array($query_product)) {
                 ?>
                 <div class = "card">
-                    <img src="FOTO/<?= $result['image'] ?>">
+                    <img src="foto/<?= $result['image'] ?>">
                     <p><?= $result['name'] ?></p>
                     <span><?= number_format($result['price'],0,',','.') ?></span>
                 </div>
@@ -80,7 +80,7 @@ include "koneksi.php";
                 while($result = mysqli_fetch_array($query_product)) {
                 ?>
                 <div class = "card">
-                    <img src="FOTO/<?= $result['image'] ?>">
+                    <img src="foto/<?= $result['image'] ?>">
                     <p><?= $result['name'] ?></p>
                     <span><?= number_format($result['price'],0,',','.') ?></span>
                 </div>
@@ -126,6 +126,6 @@ include "koneksi.php";
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
-        <script src="JS/script.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

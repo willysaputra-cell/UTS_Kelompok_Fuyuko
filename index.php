@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Fuyuko.id</title>
-        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="css/style.css">
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -22,8 +22,8 @@
             </div>
             <div class="bagian">
                 <a href="index.php" class="aktif">Tentang Kami</a>
-                <a href="Pilih.php" class="tidak">Pilih Favoritmu</a>
-                <a href="Hubungi.php" class="tidak">Hubungi Kami</a>
+                <a href="pilih.php" class="tidak">Pilih Favoritmu</a>
+                <a href="hubungi.php" class="tidak">Hubungi Kami</a>
             </div>
         </header>
         <section class="pengenalan">
@@ -44,17 +44,17 @@
             </div>
 
             <div class="foto2 hidden">
-                <img src="FOTO/foto2.png" alt="foto kue">
+                <img src="foto/foto2.png" alt="foto kue">
             </div>
 
             <div class="tbl">
-            <a href="Pilih.php" class="tombol1">Yuk, lihat produk kami!</a>
+            <a href="pilih.php" class="tombol1">Yuk, lihat produk kami!</a>
             </div>
         </section>
 
         <section class="footer reveal">
             <div class="logo2">
-                <img src="FOTO/logo2.png" alt="Logo FUYUKO">
+                <img src="foto/logo2.png" alt="Logo FUYUKO">
                 <h2>FUYUKO.ID</h2>
             </div>
 
@@ -63,9 +63,9 @@
                     <div class="col">Kategori</div>
 
                         <div class="col">
-                            <p><a href="Pilih.php #kuek">Kue Kering</a></p>
-                            <p><a href="Pilih.php #puding">Snack</a></p>
-                            <p><a href="Pilih.php #kueb">Kue Basah &<br> Puding</a></p>
+                            <p><a href="pilih.php #kuek">Kue Kering</a></p>
+                            <p><a href="pilih.php #puding">Snack</a></p>
+                            <p><a href="pilih.php #kueb">Kue Basah &<br> Puding</a></p>
                         </div>
                 </div>
 
@@ -88,6 +88,6 @@
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
-        <script src="JS/script.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

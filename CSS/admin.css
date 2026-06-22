@@ -117,6 +117,7 @@ table {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    font-family: "Nunito", sans-serif;
 }
 .table-container {
     padding: 0 40px;
