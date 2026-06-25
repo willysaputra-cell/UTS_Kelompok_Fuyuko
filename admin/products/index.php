@@ -57,10 +57,10 @@ $total = mysqli_num_rows($query);
                     ?>
                     <tr>
                         <td><?= $no ?></td>
-                        <td><?= $name ?></td>
+                        <td><?= htmlspecialchars($name) ?></td>
                         <td><?= $price ?></td>
                         <td>
-                            <img src="../../FOTO/<?= $image; ?>" class="produk-img">
+                            <img src="../../FOTO/<?= htmlspecialchars($image); ?>" class="produk-img">
                         </td>
                         <td>
                             <?php
@@ -79,7 +79,7 @@ $total = mysqli_num_rows($query);
                             }
                             ?>
                         </td>
-                        <td><?= $date ?></td>
+                        <td><?= htmlspecialchars($date) ?></td>
                         <td><?= $added_by ?></td>
                         <td>
                             <a class="btn-edit"

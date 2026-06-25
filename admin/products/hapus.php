@@ -2,15 +2,21 @@
 include "../security.php";
 include "../../koneksi.php";
 
-$id = $_GET['id'] ?? '';
+$id = (int)($_GET['id'] ?? 0);
 
-if ($id == '') {
+if ($id <= 0) {
     header("Location: index.php");
     exit;
 }
 
-$sql = "DELETE FROM products WHERE id='$id'";
-$query = mysqli_query($conn, $sql);
+$stmt = mysqli_prepare(
+    $conn,
+    "DELETE FROM products WHERE id = ?"
+);
+
+mysqli_stmt_bind_param($stmt, "i", $id);
+
+$query = mysqli_stmt_execute($stmt);
 
 header ("Location: index.php");
 exit;

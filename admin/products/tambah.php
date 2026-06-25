@@ -22,9 +22,11 @@ include "../../koneksi.php";
         </div>
 
         <section class="form-card reveal">
-            <?php if (isset($error)) : ?>
-                <p class="error"><?= $error; ?></p>
-            <?php endif; ?>
+        <?php if (isset($error)) : ?>
+            <p class="error">
+                <?= htmlspecialchars($error); ?>
+            </p>
+        <?php endif; ?>
 
             <form method="POST" action="simpan.php" enctype="multipart/form-data">
 

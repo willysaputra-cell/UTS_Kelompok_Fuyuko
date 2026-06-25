@@ -2,16 +2,23 @@
 include "../security.php";
 include "../../koneksi.php";
 
-$id = $_GET['id'] ?? '';
+$id = $_GET['id'] ?? 0;
 
-if ($id == '') {
+if ($id <= 0) {
     header("Location: index.php");
     exit;
 }
 
-$sql = "select * from products where id = '$id'";
-$query = mysqli_query($conn, $sql);
-$data = mysqli_fetch_assoc($query);
+$stmt = mysqli_prepare(
+    $conn,
+    "SELECT * FROM products WHERE id = ?"
+);
+
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+
+$result = mysqli_stmt_get_result($stmt);
+$data = mysqli_fetch_assoc($result);
 
 if (!$data) {
     header("Location: index.php");
@@ -37,15 +44,15 @@ if (!$data) {
         </div>
         <section class="form-card reveal">
             <form method="POST" action="ubah.php" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?= $data['id']; ?>">
+                <input type="hidden" name="id" value="<?= htmlspecialchars($data['id']); ?>">
 
                 <label>Nama Produk</label>
                 <input type="text" name="name" value="<?= htmlspecialchars($data['name']); ?>">
 
                 <label>Harga</label>
-                <input type="number" name="price" value="<?= $data['price']; ?>">
+                <input type="number" name="price" value="<?= htmlspecialchars($data['price']); ?>">
 
-                <label>Foto</label><
+                <label>Foto</label>
                 <img src="../../FOTO/<?= htmlspecialchars($data['image']); ?>"
                     class="preview-img"
                     alt="Foto Produk">

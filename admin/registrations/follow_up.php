@@ -1,21 +1,56 @@
+```php
 <?php
 include "../security.php";
 include "../../koneksi.php";
 
-$registration_id = $_GET['id'];
+$registration_id = (int)($_GET['id'] ?? 0);
 
-$sql_admin = "select id from users where username='$username'";
-$query_admin = mysqli_query($conn, $sql_admin) or die($sql_admin);
-$result_admin = mysqli_fetch_array($query_admin);
-$admin_id = $result_admin['id'];
+if ($registration_id <= 0) {
+    header("Location: index.php");
+    exit;
+}
 
-$sql = "update registrations set 
-        is_followed_up = 1, 
-        followed_up_by='$admin_id', 
-        followed_up_at=now() 
-        where id='$registration_id'";
-$query = mysqli_query($conn, $sql) or die($sql);
+$stmt_admin = mysqli_prepare(
+    $conn,
+    "SELECT id FROM users WHERE username = ?"
+);
+
+mysqli_stmt_bind_param(
+    $stmt_admin,
+    "s",
+    $username
+);
+
+mysqli_stmt_execute($stmt_admin);
+
+$result_admin = mysqli_stmt_get_result($stmt_admin);
+$data_admin = mysqli_fetch_assoc($result_admin);
+
+if (!$data_admin) {
+    die("Admin tidak ditemukan");
+}
+
+$admin_id = $data_admin['id'];
+
+$stmt = mysqli_prepare(
+    $conn,
+    "UPDATE registrations
+     SET is_followed_up = 1,
+         followed_up_by = ?,
+         followed_up_at = NOW()
+     WHERE id = ?"
+);
+
+mysqli_stmt_bind_param(
+    $stmt,
+    "ii",
+    $admin_id,
+    $registration_id
+);
+
+$query = mysqli_stmt_execute($stmt);
 
 header("Location: index.php");
 exit;
 ?>
+```

@@ -44,8 +44,8 @@ include "koneksi.php";
                 while($result = mysqli_fetch_array($query_product)) {
                 ?>
                 <div class = "card hidden">
-                    <img src="foto/<?= $result['image'] ?>">
-                    <p><?= $result['name'] ?></p>
+                    <img src="foto/<?= htmlspecialchars($result['image']) ?>">
+                    <p><?= htmlspecialchars($result['name']) ?></p>
                     <span><?= number_format($result['price'],0,',','.') ?></span>
                 </div>
                 <?php
@@ -62,8 +62,8 @@ include "koneksi.php";
                 while($result = mysqli_fetch_array($query_product)) {
                 ?>
                 <div class = "card">
-                    <img src="foto/<?= $result['image'] ?>">
-                    <p><?= $result['name'] ?></p>
+                    <img src="foto/<?= htmlspecialchars($result['image']) ?>">
+                    <p><?= htmlspecialchars($result['name']) ?></p>
                     <span><?= number_format($result['price'],0,',','.') ?></span>
                 </div>
                 <?php
@@ -80,8 +80,8 @@ include "koneksi.php";
                 while($result = mysqli_fetch_array($query_product)) {
                 ?>
                 <div class = "card">
-                    <img src="foto/<?= $result['image'] ?>">
-                    <p><?= $result['name'] ?></p>
+                    <img src="foto/<?= htmlspecialchars($result['image']) ?>">
+                    <p><?= htmlspecialchars($result['name']) ?></p>
                     <span><?= number_format($result['price'],0,',','.') ?></span>
                 </div>
                 <?php

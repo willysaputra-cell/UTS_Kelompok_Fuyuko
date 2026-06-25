@@ -3,7 +3,10 @@ include "../security.php";
 include "../../koneksi.php";
 
 if (isset($_POST['ubah'])) {
-    $id = $_POST['id'];
+    $id = (int)$_POST['id'];
+    if ($id <= 0) {
+        die("ID produk tidak valid");
+    }
     $name = trim($_POST['name']);
     $price = (int)$_POST['price'];
     $category_id = (int)$_POST['category_id'];
@@ -17,24 +20,52 @@ if (isset($_POST['ubah'])) {
     }   
     if (!empty($file_name)) {
         if(move_uploaded_file($file_tmp, $location . $file_name)) {
-            $sql = "update products
-                    set name='$name',
-                        price='$price',
-                        image='$file_name',
-                        category_id='$category_id'
-                    where id='$id'";
+            $stmt = mysqli_prepare(
+                $conn,
+                "UPDATE products
+                SET name = ?,
+                    price = ?,
+                    image = ?,
+                    category_id = ?
+                WHERE id = ?"
+            );
+
+            mysqli_stmt_bind_param(
+                $stmt,
+                "sisii",
+                $name,
+                $price,
+                $file_name,
+                $category_id,
+                $id
+            );
+
+            $query = mysqli_stmt_execute($stmt);
         } else {
             die("Upload gambar gagal");
         }
     } else {
-        $sql = "update products
-                set name='$name',
-                    price='$price',
-                    category_id='$category_id'
-                where id='$id'";
+        $stmt = mysqli_prepare(
+            $conn,
+            "UPDATE products
+            SET name = ?,
+                price = ?,
+                category_id = ?
+            WHERE id = ?"
+        );
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "siii",
+            $name,
+            $price,
+            $category_id,
+            $id
+        );
+
+        $query = mysqli_stmt_execute($stmt);
     }
 
-    $query = mysqli_query($conn, $sql);
     if ($query) {
         header ("Location: index.php");
         exit;

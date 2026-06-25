@@ -53,10 +53,10 @@ $total = mysqli_num_rows($query);
                     ?>
                     <tr>
                         <td><?= $no++; ?></td>
-                        <td><?= $result['full_name']; ?></td>
-                        <td><?= $result['address']; ?></td>
-                        <td><?= $result['phone_number'] ?></td>
-                        <td><?= $result['email'] ?></td>
+                        <td><?= htmlspecialchars($result['full_name']); ?></td>
+                        <td><?= htmlspecialchars($result['address']); ?></td>
+                        <td><?= htmlspecialchars($result['phone_number']); ?></td>
+                        <td><?= htmlspecialchars($result['email']); ?></td>
                         <td>
                             <?php if ($result['is_followed_up'] == 1) : ?>
                                 <span class="status done">
