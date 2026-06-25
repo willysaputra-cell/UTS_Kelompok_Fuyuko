@@ -6,5 +6,9 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 
+if (!isset($_SESSION['token'])) {
+    $_SESSION['token'] = bin2hex(random_bytes(32));
+}
+
 $username = $_SESSION['username'];
 ?>

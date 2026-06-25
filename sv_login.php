@@ -1,4 +1,3 @@
-```php
 <?php
 session_start();
 
@@ -43,4 +42,3 @@ if ($data) {
 
 }
 ?>
-```

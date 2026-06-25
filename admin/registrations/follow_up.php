@@ -1,4 +1,3 @@
-```php
 <?php
 include "../security.php";
 include "../../koneksi.php";
@@ -53,4 +52,3 @@ $query = mysqli_stmt_execute($stmt);
 header("Location: index.php");
 exit;
 ?>
-```

@@ -44,6 +44,12 @@ if (!$data) {
         </div>
         <section class="form-card reveal">
             <form method="POST" action="ubah.php" enctype="multipart/form-data">
+                <input
+                    type="hidden"
+                    name="token"
+                    value="<?= $_SESSION['token']; ?>"
+                >
+
                 <input type="hidden" name="id" value="<?= htmlspecialchars($data['id']); ?>">
 
                 <label>Nama Produk</label>

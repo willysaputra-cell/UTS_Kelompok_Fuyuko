@@ -29,6 +29,11 @@ include "../../koneksi.php";
         <?php endif; ?>
 
             <form method="POST" action="simpan.php" enctype="multipart/form-data">
+                <input
+                    type="hidden"
+                    name="token"
+                    value="<?= $_SESSION['token']; ?>"
+                >
 
                 <label>Nama Produk</label>
                 <input type="text" name="name" required>
