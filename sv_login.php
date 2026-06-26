@@ -4,20 +4,18 @@ session_start();
 include "koneksi.php";
 
 $username = trim($_POST['username']);
-$password = md5($_POST['password']);
+$password = $_POST['password'];
 
 $stmt = mysqli_prepare(
     $conn,
     "SELECT * FROM users
-     WHERE username = ?
-     AND password = ?"
+     WHERE username = ?"
 );
 
 mysqli_stmt_bind_param(
     $stmt,
-    "ss",
-    $username,
-    $password
+    "s",
+    $username
 );
 
 mysqli_stmt_execute($stmt);
@@ -25,7 +23,7 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 $data = mysqli_fetch_assoc($result);
 
-if ($data) {
+if ($data && password_verify($password, $data['password'])) {
 
     session_regenerate_id(true);
 
