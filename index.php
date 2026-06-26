@@ -31,7 +31,8 @@
                 <p>Selamat datang di surga
                 <br>manis! Temukan kue basah, 
                 <br>snack, puding, dan
-                <br>kue kering lezat untuk
+                <br>kue kering lezat 
+                <br>serta kue custome untuk
                 <br>setiap momen Anda.</p>
             </div>
         </section>
