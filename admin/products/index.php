@@ -22,7 +22,7 @@ $total = mysqli_num_rows($query);
         </header>
         <div class="arah reveal">
             <a href="../dashboard.php">Kembali ke Dashboard |</a>
-            <a href="tambah.php"> Tambah Courses</a>
+            <a href="tambah.php"> Tambah Produk</a>
         </div>
 
         <br><br>
