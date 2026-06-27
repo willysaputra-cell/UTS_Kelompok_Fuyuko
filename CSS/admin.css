@@ -21,6 +21,7 @@ header {
     color: #ab7a6a;
     text-align: center;
     font-size: 25px;
+    margin-bottom: 100px;
 }
 .D a {
     text-decoration: none;
@@ -209,6 +210,29 @@ table td a:hover {
     color: #b00020;
     font-weight: bold;
     margin-bottom: 15px;
+}
+
+.password-box{
+    position: relative;
+}
+
+.password-box input{
+    width: 100%;
+    padding-right: 50px;
+}
+
+.toggle-password{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #777;
+}
+
+.toggle-password:hover{
+    color: #E57373;
 }
 
 /* Registrations */
