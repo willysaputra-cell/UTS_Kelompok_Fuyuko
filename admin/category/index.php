@@ -8,7 +8,7 @@ $sql = "SELECT
     FROM categories
     LEFT JOIN users
     ON categories.added_by = users.id
-    ORDER BY categories.id DESC";
+    ORDER BY categories.id ASC";
 $query = mysqli_query($conn, $sql);
 $total = mysqli_num_rows($query);
 ?>

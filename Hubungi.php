@@ -1,3 +1,6 @@
+<?php
+    include "koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="id">
     <head>
@@ -116,9 +119,20 @@
                     <div class="col">Kategori</div>
 
                         <div class="col">
-                            <p><a href="pilih.php #kuek">Kue Kering</a></p>
-                            <p><a href="pilih.php #puding">Snack</a></p>
-                            <p><a href="pilih.php #kueb">Kue Basah &<br> Puding</a></p>
+                            <?php
+                                $sql_category = "SELECT * FROM categories ORDER BY id ASC";
+                                $query_category = mysqli_query($conn, $sql_category);
+
+                                while($category = mysqli_fetch_assoc($query_category)){
+                            ?>
+                                <p>
+                                    <a href="pilih.php#kategori<?= $category['id']; ?>">
+                                        <?= htmlspecialchars($category['name']); ?>
+                                    </a>
+                                </p>
+                            <?php
+                            }
+                            ?>
                         </div>
                 </div>
 

@@ -2,7 +2,16 @@
 include "../security.php";
 include "../../koneksi.php";
 
-$sql = "select * from products";
+$sql = "SELECT
+            products.*,
+            categories.name AS category_name,
+            users.username
+        FROM products
+        LEFT JOIN categories
+            ON products.category_id = categories.id
+        LEFT JOIN users
+            ON products.added_by = users.id
+        ORDER BY products.id ASC";
 $query = mysqli_query($conn, $sql);
 $total = mysqli_num_rows($query);
 ?>
@@ -37,7 +46,7 @@ $total = mysqli_num_rows($query);
                         <th>Name</th>
                         <th>Harga</th>
                         <th>Foto</th>
-                        <th>Id_Kategori</th>
+                        <th>Kategori</th>
                         <th>Waktu</th>
                         <th>Ditambahkan Oleh</th>
                         <th>Aksi</th>
@@ -50,9 +59,9 @@ $total = mysqli_num_rows($query);
                         $name = $result['name'];
                         $price = $result['price'];
                         $image = $result['image'];
-                        $category_id = $result['category_id'];
+                        $category_name = $result['category_name'];
                         $date = $result['date'];
-                        $added_by = $result['added_by'];
+                        $username = $result['username'];
                         $id = $result['id'];
                     ?>
                     <tr>
@@ -62,25 +71,9 @@ $total = mysqli_num_rows($query);
                         <td>
                             <img src="../../FOTO/<?= htmlspecialchars($image); ?>" class="produk-img">
                         </td>
-                        <td>
-                            <?php
-                            switch($category_id){
-                                case 1:
-                                    echo "Kue Kering";
-                                    break;
-                                case 2:
-                                    echo "Snack";
-                                    break;
-                                case 3:
-                                    echo "Kue Basah & Puding";
-                                    break;
-                                default:
-                                    echo "-";
-                            }
-                            ?>
-                        </td>
+                        <td><?= htmlspecialchars($category_name) ?></td>
                         <td><?= htmlspecialchars($date) ?></td>
-                        <td><?= $added_by ?></td>
+                        <td><?= $username ?></td>
                         <td>
                             <a class="btn-edit"
                                 href="edit.php?id=<?= $id; ?>">

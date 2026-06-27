@@ -35,59 +35,60 @@ include "koneksi.php";
         </header>
 
         <section class="produk reveal">
-            <!-- KUE KERING -->
-            <h2 class="judul" id="kuek">KUE KERING</h2>
-            <div class="grid">
-                <?php
-                $sql_product = "SELECT * FROM products WHERE category_id= 1";
-                $query_product = mysqli_query($conn, $sql_product);
-                while($result = mysqli_fetch_array($query_product)) {
-                ?>
-                <div class = "card hidden">
-                    <img src="foto/<?= htmlspecialchars($result['image']) ?>">
-                    <p><?= htmlspecialchars($result['name']) ?></p>
-                    <span><?= number_format($result['price'],0,',','.') ?></span>
-                </div>
-                <?php
-                }
-                ?>
-            </div>
 
-            <!-- SNACK -->
-            <h2 class="judul" id="puding">SNACK</h2>
-            <div class="grid">
-                <?php
-                $sql_product = "SELECT * FROM products WHERE category_id= 2";
-                $query_product = mysqli_query($conn, $sql_product);
-                while($result = mysqli_fetch_array($query_product)) {
-                ?>
-                <div class = "card">
-                    <img src="foto/<?= htmlspecialchars($result['image']) ?>">
-                    <p><?= htmlspecialchars($result['name']) ?></p>
-                    <span><?= number_format($result['price'],0,',','.') ?></span>
-                </div>
-                <?php
-                }
-                ?>
-            </div>
+            <?php
+            $sql_category = "SELECT * FROM categories ORDER BY id ASC";
+            $query_category = mysqli_query($conn, $sql_category);
 
-            <!-- KUE BASAH & PUDING -->
-            <h2 class="judul" id="kueb">KUE BASAH & PUDING</h2>
-            <div class="grid">
-                <?php
-                $sql_product = "SELECT * FROM products WHERE category_id= 3";
-                $query_product = mysqli_query($conn, $sql_product);
-                while($result = mysqli_fetch_array($query_product)) {
-                ?>
-                <div class = "card">
-                    <img src="foto/<?= htmlspecialchars($result['image']) ?>">
-                    <p><?= htmlspecialchars($result['name']) ?></p>
-                    <span><?= number_format($result['price'],0,',','.') ?></span>
+            while($category = mysqli_fetch_assoc($query_category)) {
+            ?>
+
+                <h2 class="judul" id="kategori<?= $category['id']; ?>">
+                    <?= htmlspecialchars(strtoupper($category['name'])); ?>
+                </h2>
+
+                <div class="grid">
+
+                    <?php
+                    $id_category = $category['id'];
+
+                    $stmt = mysqli_prepare(
+                        $conn,
+                        "SELECT * FROM products
+                        WHERE category_id = ?"
+                    );
+
+                    mysqli_stmt_bind_param(
+                        $stmt,
+                        "i",
+                        $id_category
+                    );
+
+                    mysqli_stmt_execute($stmt);
+
+                    $result = mysqli_stmt_get_result($stmt);
+
+                    while($product = mysqli_fetch_assoc($result)) {
+                    ?>
+
+                        <div class="card">
+                            <img src="FOTO/<?= htmlspecialchars($product['image']); ?>">
+
+                            <p>
+                                <?= htmlspecialchars($product['name']); ?>
+                            </p>
+
+                            <span>
+                                Rp <?= number_format($product['price'],0,',','.'); ?>
+                            </span>
+                        </div>
+
+                    <?php } ?>
+
                 </div>
-                <?php
-                }
-                ?>
-            </div>
+
+            <?php } ?>
+
         </section>
 
         <section class="footer reveal">
@@ -101,9 +102,20 @@ include "koneksi.php";
                     <div class="col">Kategori</div>
 
                         <div class="col">
-                            <p><a href="#kuek">Kue Kering</a></p>
-                            <p><a href="#puding">Snack</a></p>
-                            <p><a href="#kueb">Kue Basah &<br> Puding</a></p>
+                            <?php
+                                $sql_category = "SELECT * FROM categories ORDER BY id ASC";
+                                $query_category = mysqli_query($conn, $sql_category);
+
+                                while($category = mysqli_fetch_assoc($query_category)){
+                                ?>
+                                    <p>
+                                        <a href="#kategori<?= $category['id']; ?>">
+                                            <?= htmlspecialchars($category['name']); ?>
+                                        </a>
+                                    </p>
+                            <?php
+                            }
+                            ?>
                         </div>
                 </div>
 
