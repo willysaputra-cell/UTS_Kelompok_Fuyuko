@@ -13,7 +13,7 @@ $total = mysqli_num_rows($query);
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Products</title>
-        <link rel="stylesheet" href="../../CSS/admin.css">
+        <link rel="stylesheet" href="../../css/admin.css">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -101,6 +101,6 @@ $total = mysqli_num_rows($query);
                 </tbody>
             </table>
         </div>
-        <script src="../../JS/admin.js"></script>
+        <script src="../../js/admin.js"></script>
     </body>
 </html>

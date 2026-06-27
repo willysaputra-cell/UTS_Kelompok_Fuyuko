@@ -30,6 +30,10 @@ include "security.php";
             </div>
 
             <div class="dashboard reveal">
+                <a href="category/index.php">Manajemen Kategori</a>
+            </div>
+
+            <div class="dashboard reveal">
                 <a href="logout.php">Logout</a>
             </div>
         </section>
