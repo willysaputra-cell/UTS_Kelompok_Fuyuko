@@ -36,7 +36,7 @@
                 <br>snack, puding, dan
                 <br>kue kering lezat 
                 <br>serta kue custome untuk
-                <br>setiap momen Anda.</p>
+                <br>setiap momen Anda..</p>
             </div>
         </section>
 
