@@ -43,7 +43,7 @@
         <section class="pengenalan2 reveal">
             <div class="ajakan hidden">
                 <p>Lagi ngidam yang manis??
-                    <br>Langsung pilih dan beli sekarang!!
+                    <br>Langsung pilih dan beli sekarang!
                 </p>
             </div>
 
