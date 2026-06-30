@@ -356,89 +356,128 @@ body {
 
 /* FORM PESAN */
 .form-pesan {
-    background-color: #FADADD;
-    padding: 40px;
-    margin-left: 250px;
-    margin-top: 50px;
+    background: #FADADD;
+    width: 520px;
+    margin: 50px auto;
+    padding: 35px;
     border-radius: 25px;
-    width: 500px;
-
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 
     font-family: "Nunito", sans-serif;
 }
 
 .form-pesan h3 {
     text-align: center;
-    font-size: 35px;
+    font-size: 34px;
     color: #6D4C41;
 }
 
-.form-pesan p {
-    text-align: center;
-    color: #ab7a6a;
-    font-size: 17px;
+.form-pesan p{
+    text-align:center;
+    color:#8D6E63;
+    line-height:1.6;
 }
 
-.form-pesan a {
-    color: #ab7a6a;
+.form-pesan a{
+    color:#E57373;
+    font-weight:bold;
+    text-decoration:none;
 }
 
-#error-msg {
-    background-color: #ffe5e5;
-    color: #cc0000;
-
-    padding: 15px;
-    border-radius: 12px;
-
-    font-size: 16px;
+.form-pesan label{
+    display: block;
     text-align: left;
+    font-size:18px;
+    font-weight:bold;
+    color:#6D4C41;
+    margin-bottom:-10px;
+}
 
-    display: none;
+#error-msg{
+    display:none;
+    background:#ffe6e6;
+    color:#b30000;
+    padding:15px;
+    border-radius:15px;
+    border-left:6px solid #E57373;
+    font-weight:bold;
 }
 
 .form-pesan input,
-.form-pesan textarea {
-    padding: 15px;
-    border: none;
-    border-radius: 15px;
+.form-pesan select,
+.form-pesan textarea{
+    width:100%;
+    padding:15px 18px;
+    text-align: left;
 
-    font-size: 18px;
-    font-family: "Nunito", sans-serif;
+    border:none;
+    border-radius:15px;
+
+    background:white;
+
+    font-size:17px;
+    font-family:"Nunito",sans-serif;
+
+    transition:.3s;
 }
 
-.form-pesan textarea {
-    resize: none;
-    height: 120px;
+.form-pesan input:hover,
+.form-pesan select:hover,
+.form-pesan textarea:hover{
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
 }
 
-#pesanan {
-    height: 180px;
+.form-pesan input:focus,
+.form-pesan select:focus,
+.form-pesan textarea:focus{
+    outline:none;
+    box-shadow:0 0 0 3px rgba(229,115,115,.35);
+    transform:scale(1.01);
 }
 
-.form-pesan button {
-    background-color: #E57373;
-    color: white;
-
-    border: none;
-    border-radius: 50px;
-
-    padding: 15px;
-
-    font-size: 18px;
-    font-weight: bold;
-
-    cursor: pointer;
-    transition: 0.3s;
+.form-pesan select{
+    appearance:none;
+    cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%238D6E63' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5 8 12l6.5-6.5'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 18px center;
+    background-size:18px;
+    padding-right:45px;
 }
 
-.form-pesan button:hover {
-    background-color: #d85f5f;
-    transform: scale(1.03);
+.form-pesan input[type=number]{
+    text-align:left;
+    padding-left:18px;
+    font-size:20px;
+}
+
+.form-pesan textarea{
+    resize:none;
+    height:120px;
+}
+
+.form-pesan button{
+    margin-top:10px;
+    background:#E57373;
+    color:white;
+    border:none;
+    border-radius:50px;
+    padding:16px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.form-pesan button:hover{
+    background:#d85f5f;
+    transform:translateY(-2px);
+    box-shadow:0 8px 15px rgba(0,0,0,.15);
+
 }
 
 /* =========================

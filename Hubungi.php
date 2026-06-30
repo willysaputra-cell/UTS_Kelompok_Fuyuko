@@ -38,7 +38,7 @@
             <div class="kiri">
                 <h2>Hubungi Kami</h2>
                 <p class="deskripsi">
-                Pesan produk favoritmu dengan mudah melalui chat WhatsApp!!
+                Pesan produk favoritmu dengan mudah melalui chat WhatsApp!
                 Kami menyediakan layanan antar (tidak melayani makan di tempat).
                 </p>
 
@@ -80,22 +80,66 @@
                         untuk mengisi informasi anda sehingga memudahkan <br>
                         kami dalam mengirim pesanan. <a href="daftar.php">Daftar</a></p>
 
-                    <textarea
-                        id="pesanan"
-                        placeholder="Tulis pesananmu di sini..."
-                        required
-                    ></textarea>
+                        <label>Kategori</label>
+                        <select id="category">
+                            <option value="">-- Pilih Kategori --</option>
+                            <?php
+                            $kategori = mysqli_query(
+                                $conn,
+                                "SELECT * FROM categories ORDER BY name ASC"
+                            );
+                            while($k = mysqli_fetch_assoc($kategori)){
+                            ?>
+                                <option value="<?= $k['id'] ?>">
+                                    <?= htmlspecialchars($k['name']) ?>
+                                </option>
+                            <?php } ?>
+                        </select>
 
-                    <textarea
-                        id="catatan"
-                        placeholder="Catatan tambahan..."
-                    ></textarea>
+                        <label>Produk</label>
+                        <select id="product">
+                            <option value="">
+                                -- Pilih Produk --
+                            </option>
+                        </select>
+
+                        <label>Jumlah</label>
+                        <input
+                            type="number"
+                            id="jumlah"
+                            min="1"
+                            value="1"
+                        >
+
+                        <label>Catatan Tambahan</label>
+                        <textarea
+                            id="catatan"
+                            placeholder="Contoh : jangan terlalu manis..."
+                        ></textarea>
 
                     <button type="button" onclick="kirimWA()">
                         Pesan via WhatsApp
                     </button>
-
                 </form>
+                <script>
+                const products = [
+                    <?php
+                    $query = mysqli_query(
+                        $conn,
+                        "SELECT id,name,category_id
+                        FROM products
+                        ORDER BY name ASC"
+                    );
+                    while($row=mysqli_fetch_assoc($query)){
+                    ?>
+                    {
+                        id: <?= $row['id'] ?>,
+                        name: "<?= htmlspecialchars($row['name'],ENT_QUOTES) ?>",
+                        category: <?= $row['category_id'] ?>
+                    },
+                    <?php } ?>
+                ];
+                </script>
             </div>
         </section>
 

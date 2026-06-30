@@ -26,12 +26,19 @@ if (btn) {
 
 function kirimWA() {
 
-    let pesanan = document.getElementById("pesanan").value.trim();
-    let catatan = document.getElementById("catatan").value.trim();
+    const category = document.getElementById("category");
+    const product = document.getElementById("product");
+    const jumlah = document.getElementById("jumlah");
+    const catatan = document.getElementById("catatan");
 
-    let errorMsg = document.getElementById("error-msg");
+    const errorMsg = document.getElementById("error-msg");
 
-    if (pesanan === "") {
+    if (
+        category.value === "" ||
+        product.value === "" ||
+        jumlah.value === "" ||
+        jumlah.value <= 0
+    ) {
         errorMsg.style.display = "block";
         return;
     }
@@ -41,11 +48,12 @@ function kirimWA() {
     let pesan =
 `Halo, saya ingin memesan produk Fuyuko.id
 
-Pesanan :
-${pesanan}
+Kategori : ${category.options[category.selectedIndex].text}
+Produk : ${product.value}
+Jumlah : ${jumlah.value}
 
 Catatan :
-${catatan}`;
+${catatan.value}`;
 
     let nomorWA = "6289531726626";
 
@@ -56,6 +64,40 @@ ${catatan}`;
         encodeURIComponent(pesan);
 
     window.open(url, "_blank");
+
+}
+
+/* =========================
+    FORM PEMESANAN
+========================= */
+const category = document.getElementById("category");
+const product = document.getElementById("product");
+
+if (category && product) {
+
+    category.addEventListener("change", function () {
+
+        product.innerHTML =
+            '<option value="">-- Pilih Produk --</option>';
+
+        const hasil = products.filter(function(item){
+            return Number(item.category) === Number(category.value);
+        });
+
+        console.log(hasil); // sementara untuk cek
+
+        hasil.forEach(function(item){
+
+            product.innerHTML += `
+                <option value="${item.name}">
+                    ${item.name}
+                </option>
+            `;
+
+        });
+
+    });
+
 }
 
 /* =========================

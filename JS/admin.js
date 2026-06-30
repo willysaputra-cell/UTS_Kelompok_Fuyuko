@@ -36,3 +36,45 @@ function togglePassword() {
     }
 
 }
+
+/* =========================
+   PILIH PRODUK BERDASARKAN KATEGORI
+========================= */
+
+const categorySelect = document.getElementById("category");
+const productSelect = document.getElementById("product");
+
+if (categorySelect && productSelect) {
+
+    categorySelect.addEventListener("change", function () {
+
+        const categoryId = this.value;
+
+        productSelect.innerHTML =
+            '<option value="">-- Pilih Produk --</option>';
+
+        if (categoryId === "") {
+            return;
+        }
+
+        fetch("get_products.php?category_id=" + categoryId)
+            .then(response => response.json())
+            .then(data => {
+
+                data.forEach(function(item){
+
+                    productSelect.innerHTML += `
+                        <option
+                            value="${item.id}"
+                            data-price="${item.price}">
+                            ${item.name}
+                        </option>
+                    `;
+
+                });
+
+            });
+
+    });
+
+}

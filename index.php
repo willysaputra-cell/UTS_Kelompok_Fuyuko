@@ -32,17 +32,17 @@
         <section class="pengenalan">
             <div class="kata2">
                 <p>Selamat datang di surga
-                <br>manis! Temukan kue basah,,,
+                <br>manis! Temukan kue basah,
                 <br>snack, puding, dan
                 <br>kue kering lezat 
                 <br>serta kue custom untuk
-                <br>setiap momen Anda..</p>
+                <br>setiap momen Anda.</p>
             </div>
         </section>
 
         <section class="pengenalan2 reveal">
             <div class="ajakan hidden">
-                <p>Lagi ngidam yang manis??
+                <p>Lagi ngidam yang manis?
                     <br>Langsung pilih dan beli sekarang!
                 </p>
             </div>

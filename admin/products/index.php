@@ -60,7 +60,7 @@ $total = mysqli_num_rows($query);
                         $price = $result['price'];
                         $image = $result['image'];
                         $category_name = $result['category_name'];
-                        $date = $result['date'];
+                        $date = $result['created_at'];
                         $username = $result['username'];
                         $id = $result['id'];
                     ?>

@@ -34,7 +34,11 @@ include "security.php";
             </div>
 
             <div class="dashboard reveal">
-                <a href="admin/index.php">Manajemen Admin</a>
+                <a href="m_admin/index.php">Manajemen Admin</a>
+            </div>
+
+            <div class="dashboard reveal">
+                <a href="orders/index.php">Manajemen Orders</a>
             </div>
 
             <div class="dashboard reveal">
