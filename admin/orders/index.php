@@ -58,7 +58,7 @@ $total = mysqli_num_rows($query);
             </a>
 
             <a href="tambah.php">
-                Tambah Order
+                Tambah Order |
             </a>
 
         </div>
