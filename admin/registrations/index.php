@@ -2,9 +2,11 @@
 include "../security.php";
 include "../../koneksi.php";
 
-$sql = "select *
-        from registrations 
-        order by created_at desc";
+$sql = "SELECT registrations.*, users.username AS followed_up_by_name
+        FROM registrations
+        LEFT JOIN users
+        ON registrations.followed_up_by = users.id
+        ORDER BY registrations.created_at DESC";
 $query = mysqli_query($conn, $sql);
 $total = mysqli_num_rows($query);
 ?>
@@ -39,7 +41,8 @@ $total = mysqli_num_rows($query);
                         <th>Alamat</th>
                         <th>Nomor Telepon</th>
                         <th>Email</th>
-                        <th>Status Follow Up</th>
+                        <th>Status Pesanan</th>
+                        <th>Diatur oleh</th>
                         <th>Waktu Pendaftaran</th>
                         <th>Aksi</th>
                     </tr>
@@ -60,29 +63,30 @@ $total = mysqli_num_rows($query);
                         <td>
                             <?php if ($result['is_followed_up'] == 1) : ?>
                                 <span class="status done">
-                                    Followed Up
+                                    Selesai
                                 </span>
                             <?php else : ?>
                                 <span class="status pending">
-                                    Pending
+                                    Proses Pembuatan
                                 </span>
                             <?php endif; ?>
                         </td>
                         <td>
                             <?= date('d M Y H:i', strtotime($result['created_at'])); ?>
                         </td>
+                        <td><?= htmlspecialchars($result['followed_up_by_name'] ?? '-'); ?></td>
                         <td>
                             <?php if ($result['is_followed_up'] == 0) : ?>
                                 <a  class="btn-follow"
                                     href="follow_up.php?id=<?= $result['id']; ?>"
-                                    onclick = "return confirm('Mark this registration as followed up?')">
-                                    Sudah Follow Up!
+                                    onclick = "return confirm('Apakah sudah diterima oleh pelanggan?')">
+                                    Sudah Diterima!
                                 </a>
                             <?php else : ?>
                                 <a  class="btn-cancel"
                                     href="cancel_follow_up.php?id=<?= $result['id']; ?>"
-                                    onclick = "return confirm('Cancel follow up status?')">
-                                    Cancel Follow Up
+                                    onclick = "return confirm('Apakah lagi dalam proses?')">
+                                    Lagi Pembuatan!
                                 </a>
                             <?php endif; ?>
                         </td>

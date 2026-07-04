@@ -12,9 +12,10 @@ if ($registration_id <= 0) {
 $stmt = mysqli_prepare(
     $conn,
     "UPDATE registrations
-     SET is_followed_up = 0,
-         followed_up_at = NULL
-     WHERE id = ?"
+    SET is_followed_up = 0,
+        followed_up_by = NULL,
+        followed_up_at = NULL
+    WHERE id = ?"
 );
 
 mysqli_stmt_bind_param(

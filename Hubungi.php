@@ -80,6 +80,25 @@
                         untuk mengisi informasi anda sehingga memudahkan <br>
                         kami dalam mengirim pesanan. <a href="daftar.php">Daftar</a></p>
 
+                        <label>Nama</label>
+                        <select id="customer_name">
+                            <option value="">-- Pilih Nama --</option>
+
+                            <?php
+                            $registrations = mysqli_query(
+                                $conn,
+                                "SELECT id, full_name
+                                FROM registrations
+                                ORDER BY full_name ASC"
+                            );
+
+                            while ($r = mysqli_fetch_assoc($registrations)) {
+                            ?>
+                                <option value="<?= htmlspecialchars($r['full_name']) ?>">
+                                    <?= htmlspecialchars($r['full_name']) ?>
+                                </option>
+                            <?php } ?>
+                        </select>
                         <label>Kategori</label>
                         <select id="category">
                             <option value="">-- Pilih Kategori --</option>

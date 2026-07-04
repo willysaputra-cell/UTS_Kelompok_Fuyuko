@@ -26,6 +26,7 @@ if (btn) {
 
 function kirimWA() {
 
+    const nama = document.getElementById("customer_name").value;
     const category = document.getElementById("category");
     const product = document.getElementById("product");
     const jumlah = document.getElementById("jumlah");
@@ -34,6 +35,7 @@ function kirimWA() {
     const errorMsg = document.getElementById("error-msg");
 
     if (
+        nama === "" ||
         category.value === "" ||
         product.value === "" ||
         jumlah.value === "" ||
@@ -48,6 +50,7 @@ function kirimWA() {
     let pesan =
 `Halo, saya ingin memesan produk Fuyuko.id
 
+Nama : ${nama}
 Kategori : ${category.options[category.selectedIndex].text}
 Produk : ${product.value}
 Jumlah : ${jumlah.value}
