@@ -8,7 +8,8 @@ $sql = "
         products.name AS product_name,
         products.price,
         categories.name AS category_name,
-        users.username
+        users.username,
+        registrations.full_name
     FROM orders
     JOIN products
         ON orders.product_id = products.id
@@ -16,6 +17,8 @@ $sql = "
         ON products.category_id = categories.id
     JOIN users
         ON orders.added_by = users.id
+    LEFT JOIN registrations
+        ON orders.registration_id = registrations.id
     ORDER BY orders.created_at DESC
 ";
 
@@ -58,7 +61,7 @@ $total = mysqli_num_rows($query);
             </a>
 
             <a href="tambah.php">
-                Tambah Order |
+                Tambah Order 
             </a>
 
         </div>
@@ -76,6 +79,7 @@ $total = mysqli_num_rows($query);
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Nama Pendaftar</th>
                         <th>Produk</th>
                         <th>Kategori</th>
                         <th>Harga</th>
@@ -102,6 +106,10 @@ $total = mysqli_num_rows($query);
 
                         <td>
                             <?= $no; ?>
+                        </td>
+
+                        <td>
+                            <?= htmlspecialchars($row["full_name"] ?? "-"); ?>
                         </td>
 
                         <td>

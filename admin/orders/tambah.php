@@ -2,6 +2,16 @@
 include "../security.php";
 include "../../koneksi.php";
 
+$sql_registration = "
+SELECT
+    id,
+    full_name
+FROM registrations
+ORDER BY full_name ASC
+";
+
+$query_registration = mysqli_query($conn, $sql_registration);
+
 $sql = "
     SELECT
         products.id,
@@ -64,6 +74,31 @@ $query = mysqli_query($conn, $sql);
                     name="token"
                     value="<?= $_SESSION['token']; ?>"
                 >
+
+                <label>Nama Pendaftar</label>
+
+                <select
+                    name="registration_id"
+                    required
+                >
+
+                    <option value="">
+                        -- Pilih Pendaftar --
+                    </option>
+
+                    <?php
+                    while ($registration = mysqli_fetch_assoc($query_registration)) :
+                    ?>
+
+                        <option
+                            value="<?= $registration['id']; ?>"
+                        >
+                            <?= htmlspecialchars($registration['full_name']); ?>
+                        </option>
+
+                    <?php endwhile; ?>
+
+                </select>
 
                 <label>Produk</label>
 

@@ -11,9 +11,14 @@ if (
 
 $product_id = (int) ($_POST["product_id"] ?? 0);
 $quantity   = (int) ($_POST["quantity"] ?? 0);
+$registration_id = (int) ($_POST["registration_id"] ?? 0);
 $added_by   = $_SESSION["id"];
 
-if ($product_id <= 0 || $quantity <= 0) {
+if (
+    $registration_id <= 0 ||
+    $product_id <= 0 ||
+    $quantity <= 0
+) {
     die("Data tidak valid.");
 }
 
@@ -46,6 +51,7 @@ $stmt = mysqli_prepare(
     $conn,
     "INSERT INTO orders
     (
+        registration_id,
         product_id,
         price,
         quantity,
@@ -53,12 +59,13 @@ $stmt = mysqli_prepare(
         added_by
     )
     VALUES
-    (?, ?, ?, ?, ?)"
+    (?, ?, ?, ?, ?, ?)"
 );
 
 mysqli_stmt_bind_param(
     $stmt,
-    "iiiii",
+    "iiiiii",
+    $registration_id,
     $product_id,
     $price,
     $quantity,

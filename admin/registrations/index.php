@@ -41,10 +41,9 @@ $total = mysqli_num_rows($query);
                         <th>Alamat</th>
                         <th>Nomor Telepon</th>
                         <th>Email</th>
-                        <th>Status Pesanan</th>
-                        <th>Diatur oleh</th>
                         <th>Waktu Pendaftaran</th>
                         <th>Aksi</th>
+                        <th>Produk</th>
                     </tr>
                 </thead>
 
@@ -60,35 +59,32 @@ $total = mysqli_num_rows($query);
                         <td><?= htmlspecialchars($result['address']); ?></td>
                         <td><?= htmlspecialchars($result['phone_number']); ?></td>
                         <td><?= htmlspecialchars($result['email']); ?></td>
-                        <td>
-                            <?php if ($result['is_followed_up'] == 1) : ?>
-                                <span class="status done">
-                                    Selesai
-                                </span>
-                            <?php else : ?>
-                                <span class="status pending">
-                                    Proses Pembuatan
-                                </span>
-                            <?php endif; ?>
-                        </td>
+                        
+
                         <td>
                             <?= date('d M Y H:i', strtotime($result['created_at'])); ?>
                         </td>
-                        <td><?= htmlspecialchars($result['followed_up_by_name'] ?? '-'); ?></td>
                         <td>
-                            <?php if ($result['is_followed_up'] == 0) : ?>
-                                <a  class="btn-follow"
-                                    href="follow_up.php?id=<?= $result['id']; ?>"
-                                    onclick = "return confirm('Apakah sudah diterima oleh pelanggan?')">
-                                    Sudah Diterima!
-                                </a>
-                            <?php else : ?>
-                                <a  class="btn-cancel"
-                                    href="cancel_follow_up.php?id=<?= $result['id']; ?>"
-                                    onclick = "return confirm('Apakah lagi dalam proses?')">
-                                    Lagi Pembuatan!
-                                </a>
-                            <?php endif; ?>
+                            <a
+                                class="btn-edit"
+                                href="edit.php?id=<?= $result['id']; ?>"
+                            >
+                                Edit
+                            </a>
+
+                            <a
+                                class="btn-hapus"
+                                href="hapus.php?id=<?= $result['id']; ?>"
+                                onclick="return confirm('Yakin ingin menghapus pendaftaran ini?')"
+                            >
+                                Hapus
+                            </a>
+                        </td>
+                        <td>
+                            <a class="btn-edit"
+                                href="detail_order/detail_order.php?id=<?= $result['id']; ?>">
+                                Detail Pengiriman
+                            </a>
                         </td>
                     </tr>
                     <?php endwhile; ?>
