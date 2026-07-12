@@ -133,7 +133,7 @@ $total = mysqli_num_rows($query);
                         </td>
 
                         <td>
-                            <?= $row["created_at"]; ?>
+                            <?= date('d M Y H:i', strtotime($row['created_at'])); ?>
                         </td>
 
                         <td>

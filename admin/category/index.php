@@ -56,7 +56,7 @@ $total = mysqli_num_rows($query);
                     <tr>
                         <td><?= $no++ ?></td>
                         <td><?= htmlspecialchars($row['name']) ?></td>
-                        <td><?= htmlspecialchars($row['created_at']) ?></td>
+                        <td><?= date('d M Y H:i', strtotime($row['created_at'])); ?></td>
                         <td><?= htmlspecialchars($row['username']) ?></td>
                         <td>
                         <a

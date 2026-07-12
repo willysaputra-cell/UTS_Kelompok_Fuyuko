@@ -72,7 +72,7 @@ $total = mysqli_num_rows($query);
                             <img src="../../FOTO/<?= htmlspecialchars($image); ?>" class="produk-img">
                         </td>
                         <td><?= htmlspecialchars($category_name) ?></td>
-                        <td><?= htmlspecialchars($date) ?></td>
+                        <td><?= date('d M Y H:i', strtotime($result['created_at'])); ?></td>
                         <td><?= $username ?></td>
                         <td>
                             <a class="btn-edit"
