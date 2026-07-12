@@ -12,7 +12,7 @@
     <body>
         <div class = "header_daftar"><h1>Forum Pendaftaran</h1></div>
         <form method="POST" action="sv_daftar.php" class="daftar">
-            <h1>Daftar</h1>
+            
             <div>
                 <label>Nama Lengkap :</label><br>
                 <input type="text" name="full_name" placeholder="Ilham Santoso" required><br>

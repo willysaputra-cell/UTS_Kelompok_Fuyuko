@@ -55,8 +55,13 @@ include "koneksi.php";
                     $stmt = mysqli_prepare(
                         $conn,
                         "SELECT * FROM products
-                        WHERE category_id = ?"
+                        WHERE category_id = ?
+                        ORDER BY name ASC"
                     );
+
+                    if (!$stmt) {
+                        die(mysqli_error($conn));
+                    }
 
                     mysqli_stmt_bind_param(
                         $stmt,
@@ -72,7 +77,7 @@ include "koneksi.php";
                     ?>
 
                         <div class="card">
-                            <img src="FOTO/<?= htmlspecialchars($product['image']); ?>">
+                            <img src="foto/<?= htmlspecialchars($product['image']); ?>">
 
                             <p>
                                 <?= htmlspecialchars($product['name']); ?>
@@ -83,7 +88,10 @@ include "koneksi.php";
                             </span>
                         </div>
 
-                    <?php } ?>
+                    <?php 
+                    }
+                    mysqli_stmt_close($stmt); 
+                    ?>
 
                 </div>
 
@@ -93,7 +101,7 @@ include "koneksi.php";
 
         <section class="footer reveal">
             <div class="logo2">
-                <img src="FOTO/logo2.png" alt="Logo FUYUKO">
+                <img src="foto/logo2.png" alt="Logo FUYUKO">
                 <h2>FUYUKO.ID</h2>
             </div>
 

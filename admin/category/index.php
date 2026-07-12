@@ -43,7 +43,7 @@ $total = mysqli_num_rows($query);
                         <th>No</th>
                         <th>Nama</th>
                         <th>Tanggal</th>
-                        <th>Added By</th>
+                        <th>Ditambahkan Oleh</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
