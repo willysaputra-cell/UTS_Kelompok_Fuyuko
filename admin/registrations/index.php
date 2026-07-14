@@ -2,11 +2,9 @@
 include "../security.php";
 include "../../koneksi.php";
 
-$sql = "SELECT registrations.*, users.username AS followed_up_by_name
+$sql = "SELECT *
         FROM registrations
-        LEFT JOIN users
-        ON registrations.followed_up_by = users.id
-        ORDER BY registrations.created_at DESC";
+        ORDER BY created_at DESC";
 $query = mysqli_query($conn, $sql);
 $total = mysqli_num_rows($query);
 ?>
